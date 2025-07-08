@@ -52,11 +52,11 @@ public class ImageProcessingService {
 
         Mat littleImg = image.submat(startY, endY, startX, endX);
         Scalar mean = Core.mean(littleImg);
-        double red = mean.val[2];    // کانال BGR: 2 = Red
-        double green = mean.val[1];  // کانال Green
-        double blue = mean.val[0];   // کانال Blue
+        double red = mean.val[2];
+        double green = mean.val[1];
+        double blue = mean.val[0];
 
-        return red > 170 && green < 60 && blue < 60;
+        return red > 150 && green < 60 && blue < 60;
     }
 
     private Mat bufferedImageToMat(BufferedImage bi) {
